@@ -101,5 +101,6 @@ def play(board)
     turn(board)
   end
   if draw?(board) == true then puts "Cat's Game!"
+  else puts "Congratulations #{winner(board)}!"
   end
 end
