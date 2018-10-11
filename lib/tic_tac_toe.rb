@@ -22,7 +22,7 @@ def input_to_index(user_input)
 end
 
 def move(board, index, token)
-token = current_player(board)
+  token = current_player(board)
   board[index] = token
 end
 
@@ -38,8 +38,9 @@ def turn(board)
   puts "Please enter 1-9:"
   user_input = gets.strip
   index = input_to_index(user_input)
+  token = current_player
   if valid_move?(board, index)
-    move(board, index)
+    move(board, index, token)
     display_board(board)
   else
     turn(board)
