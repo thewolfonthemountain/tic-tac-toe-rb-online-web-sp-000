@@ -97,5 +97,7 @@ end
 end
 
 def play(board)
-input = gets
+until over?(board) == true
+  turn(board)
+end
 end
