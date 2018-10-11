@@ -44,3 +44,54 @@ def turn(board)
     turn(board)
   end
 end
+
+def turn_count(board)
+counter = 0
+board.each do |space|
+if space == "X" || space == "O" then counter += 1
+    end
+  end
+counter
+end
+
+def current_player(board)
+player = "X"
+  if turn_count(board) % 2 == 0 then player = "X"
+  else player = "O"
+end
+player
+end
+
+def won?(board)
+  WIN_COMBINATIONS.each do |win_combination|
+    if board[win_combination[0]] == "X" && board[win_combination[1]] == "X" && board[win_combination[2]] == "X"
+      return win_combination
+    elsif
+      board[win_combination[0]] == "O" && board[win_combination[1]] == "O" && board[win_combination[2]] == "O"
+      return win_combination
+    else
+      false
+    end
+  end
+  false
+end
+
+
+def full?(board)
+  board.none?{|space| space == " "}
+end
+
+def draw?(board)
+  won?(board) == false && full?(board) == true
+end
+
+def over?(board)
+won?(board) || draw?(board)
+end
+
+def winner(board)
+if won?(board) == false then nil else
+win_array = won?(board)
+board[win_array[0]]
+end
+end
