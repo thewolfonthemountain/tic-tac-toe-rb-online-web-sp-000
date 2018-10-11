@@ -100,4 +100,6 @@ def play(board)
   while over?(board) == false
     turn(board)
   end
+  if draw?(board) == true then "Cat's Game!"
+  end
 end
