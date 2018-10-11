@@ -97,7 +97,12 @@ end
 end
 
 def play(board)
-while over?(board) == false
-  turn(board)
-end
+  while over?(board) == false
+    turn(board)
+  end
+  if
+    draw?(board) = true then
+    puts "Cat's Game!"
+  else "Congratulations #{winner(board)}!"
+  end  
 end
