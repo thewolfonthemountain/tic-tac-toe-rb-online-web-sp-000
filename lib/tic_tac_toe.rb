@@ -97,8 +97,7 @@ end
 end
 
 def play(board)
-until ?(board) == true
+while over?(board) == false
   turn(board)
 end
-if won?(board) == true
 end
